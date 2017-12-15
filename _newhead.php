@@ -3,6 +3,7 @@
 
     <title>剑君十二恨</title>
     <?php $staticPath = "static/js/oneui"; ?>
+    <?php $cssPath = "static/css"; ?>
 
     <meta name="description" content="OneUI - Admin Dashboard Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
@@ -30,6 +31,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="<?=$staticPath?>/img/favicons/apple-touch-icon-180x180.png">
     <!-- END Icons -->
 
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700"> -->
+    <link rel="stylesheet" id="css-main" href="<?=$cssPath?>/base.css">
+
     <!-- Stylesheets -->
     <!-- Web fonts -->
     <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700"> -->
@@ -48,29 +52,29 @@
     <script src="<?=$staticPath?>/js/core/js.cookie.min.js"></script>
     <script src="<?=$staticPath?>/js/app.js"></script>
 
-    <style type="text/css">
-        .jqstooltip {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            visibility: hidden;
-            background: rgb(0, 0, 0) transparent;
-            background-color: rgba(0,0,0,0.6);
-            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-            color: white;
-            font: 10px arial, san serif;
-            text-align: left;
-            white-space: nowrap;
-            padding: 5px;
-            border: 1px solid white;z-index: 10000;
-        }
-        .jqsfield {
-            color: white;
-            font: 10px arial, san serif;
-            text-align: left;
-        }
-    </style>
+<!--    <style type="text/css">-->
+<!--        .jqstooltip {-->
+<!--            position: absolute;-->
+<!--            left: 0px;-->
+<!--            top: 0px;-->
+<!--            visibility: hidden;-->
+<!--            background: rgb(0, 0, 0) transparent;-->
+<!--            background-color: rgba(0,0,0,0.6);-->
+<!--            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-->
+<!--            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";-->
+<!--            color: white;-->
+<!--            font: 10px arial, san serif;-->
+<!--            text-align: left;-->
+<!--            white-space: nowrap;-->
+<!--            padding: 5px;-->
+<!--            border: 1px solid white;z-index: 10000;-->
+<!--        }-->
+<!--        .jqsfield {-->
+<!--            color: white;-->
+<!--            font: 10px arial, san serif;-->
+<!--            text-align: left;-->
+<!--        }-->
+<!--    </style>-->
 </head>
 <body>
     <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
@@ -276,7 +280,7 @@
 
         <nav id="sidebar">
             <!-- Sidebar Scroll Container -->
-            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 392px;"><div id="sidebar-scroll" style="overflow: hidden; width: auto; height: 392px;">
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 367px;"><div id="sidebar-scroll" style="overflow: hidden; width: auto; height: 311px;">
                 <!-- Sidebar Content -->
                 <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
                 <div class="sidebar-content">
@@ -332,312 +336,7 @@
 
                     <!-- Side Content -->
                     <div class="side-content">
-                        <ul class="nav-main">
-                            <li>
-                                <a href="index.html"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span></a>
-                            </li>
-                            <li class="nav-main-heading"><span class="sidebar-mini-hide">User Interface</span></li>
-                            <li class="open">
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">UI Elements</span></a>
-                                <ul>
-                                    <li>
-                                        <a class="active" href="base_ui_widgets.html">Widgets</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-submenu" data-toggle="nav-submenu" href="#">Blocks</a>
-                                        <ul>
-                                            <li>
-                                                <a href="base_ui_blocks.html">Styles</a>
-                                            </li>
-                                            <li>
-                                                <a href="base_ui_blocks_api.html">Blocks API</a>
-                                            </li>
-                                            <li>
-                                                <a href="base_ui_blocks_draggable.html">Draggable</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_grid.html">Grid</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_typography.html">Typography</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_icons.html">Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_buttons.html">Buttons</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_activity.html">Activity</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_tabs.html">Tabs</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_tiles.html">Tiles</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_timeline.html">Timeline</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_navigation.html">Navigation</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_modals_tooltips.html">Modals &amp; Tooltips</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_ui_color_themes.html">Color Themes</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-grid"></i><span class="sidebar-mini-hide">Tables</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="base_tables_styles.html">Styles</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_tables_responsive.html">Responsive</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_tables_tools.html">Tools</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_tables_pricing.html">Pricing</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_tables_datatables.html">DataTables</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-note"></i><span class="sidebar-mini-hide">Forms</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="base_forms_premade.html">Pre-made</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_forms_elements.html">Elements</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_forms_pickers_more.html">Pickers &amp; More</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_forms_editors.html">Text Editors</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_forms_validation.html">Validation</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_forms_wizard.html">Wizard</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-main-heading"><span class="sidebar-mini-hide">Develop</span></li>
-                            <li>
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wrench"></i><span class="sidebar-mini-hide">Components</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="base_comp_images.html">Images</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_comp_charts.html">Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_comp_calendar.html">Calendar</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_comp_sliders.html">Sliders</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_comp_maps.html">Maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_comp_animations.html">Animations</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_comp_syntax_highlighting.html">Syntax Highlighting</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-submenu" data-toggle="nav-submenu" href="#">Gallery</a>
-                                        <ul>
-                                            <li>
-                                                <a href="base_comp_gallery_simple.html">Simple</a>
-                                            </li>
-                                            <li>
-                                                <a href="base_comp_gallery_advanced.html">Advanced</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-magic-wand"></i><span class="sidebar-mini-hide">Layouts</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="base_layouts_api.html">Layout API</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_default.html">Default</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_default_flipped.html">Default Flipped</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_header_static.html">Static Header</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_sidebar_mini_hoverable.html">Mini Sidebar (Hoverable)</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_side_overlay_hoverable.html">Side Overlay (Hoverable)</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_side_overlay_open.html">Side Overlay (Open)</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_side_native_scrolling.html">Side Native Scrolling</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_layouts_sidebar_hidden.html">Hidden Sidebar</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i><span class="sidebar-mini-hide">Multi Level Menu</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="#">Link 1-1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Link 1-2</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-submenu" data-toggle="nav-submenu" href="#">Sub Level 2</a>
-                                        <ul>
-                                            <li>
-                                                <a href="#">Link 2-1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Link 2-2</a>
-                                            </li>
-                                            <li>
-                                                <a class="nav-submenu" data-toggle="nav-submenu" href="#">Sub Level 3</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">Link 3-1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Link 3-2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="nav-submenu" data-toggle="nav-submenu" href="#">Sub Level 4</a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Link 4-1</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Link 4-2</a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="nav-submenu" data-toggle="nav-submenu" href="#">Sub Level 5</a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="#">Link 5-1</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#">Link 5-2</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="nav-submenu" data-toggle="nav-submenu" href="#">Sub Level 6</a>
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="#">Link 6-1</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">Link 6-2</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-main-heading"><span class="sidebar-mini-hide">Pages</span></li>
-                            <li>
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-layers"></i><span class="sidebar-mini-hide">Generic</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="base_pages_blank.html">Blank</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_profile.html">User Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_search.html">Search Results</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_invoice.html">Invoice</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_faq.html">FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_inbox.html">Inbox</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_login.html">Log In</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_register.html">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_lock.html">Lock Screen</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_reminder.html">Password Reminder</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_coming_soon.html">Coming Soon</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-fire"></i><span class="sidebar-mini-hide">Error Pages</span></a>
-                                <ul>
-                                    <li>
-                                        <a href="base_pages_400.html">400</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_401.html">401</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_403.html">403</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_404.html">404</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_500.html">500</a>
-                                    </li>
-                                    <li>
-                                        <a href="base_pages_503.html">503</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-main-heading"><span class="sidebar-mini-hide">Apps</span></li>
-                            <li>
-                                <a href="frontend_home.html"><i class="si si-rocket"></i><span class="sidebar-mini-hide">Frontend</span></a>
-                            </li>
-                        </ul>
+                        <?php include_once('_menu.php') ?>
                     </div>
                     <!-- END Side Content -->
                 </div>
@@ -651,7 +350,7 @@
             <ul class="nav-header pull-right">
                 <li>
                     <div class="btn-group">
-                        <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
+                        <button class="btn btn-default btn-image dropdown-toggle headheight" data-toggle="dropdown" type="button">
                             <img src="<?=$staticPath?>/img/avatars/avatar10.jpg" alt="Avatar">
                             <span class="caret"></span>
                         </button>
@@ -691,7 +390,7 @@
                 </li>
                 <li>
                     <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                    <button class="btn btn-default" data-toggle="layout" data-action="side_overlay_toggle" type="button">
+                    <button class="btn btn-default headheight" data-toggle="layout" data-action="side_overlay_toggle" type="button">
                         <i class="fa fa-tasks"></i>
                     </button>
                 </li>
@@ -708,13 +407,13 @@
                 </li>
                 <li class="hidden-xs hidden-sm">
                     <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
-                    <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
+                    <button class="btn btn-default headheight" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
                         <i class="fa fa-ellipsis-v"></i>
                     </button>
                 </li>
                 <li>
                     <!-- Opens the Apps modal found at the bottom of the page, before including JS code -->
-                    <button class="btn btn-default pull-right" data-toggle="modal" data-target="#apps-modal" type="button">
+                    <button class="btn btn-default pull-right headheight" data-toggle="modal" data-target="#apps-modal" type="button">
                         <i class="si si-grid"></i>
                     </button>
                 </li>
