@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="本地">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="demo">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="world"/>
+    <table id="9" parent="2" name="i_t"/>
+    <table id="10" parent="2" name="t"/>
+    <table id="11" parent="2" name="t1"/>
+    <table id="12" parent="2" name="t2"/>
+    <table id="13" parent="2" name="t3"/>
+    <table id="14" parent="2" name="t4"/>
+    <table id="15" parent="2" name="test01"/>
+    <table id="16" parent="2" name="test02"/>
+    <routine id="17" parent="2" name="load_t">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="18" parent="2" name="load_t1">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="19" parent="2" name="load_t2">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="20" parent="2" name="load_t3">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="21" parent="2" name="load_t4">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="22" parent="9" name="a">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="9" name="b">
+      <Position>2</Position>
+      <DataType>varchar(8000)|0</DataType>
+    </column>
+    <column id="24" parent="9" name="c">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="25" parent="9" name="idx_b">
+      <ColNames>b</ColNames>
+    </index>
+    <key id="26" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>a</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="10" name="a">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="10" name="b">
+      <Position>2</Position>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <key id="29" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>a</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="11" name="col1">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="11" name="col2">
+      <Position>2</Position>
+      <DataType>varchar(7000)|0</DataType>
+    </column>
+    <key id="32" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>col1</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="12" name="col1">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="12" name="col2">
+      <Position>2</Position>
+      <DataType>varchar(7000)|0</DataType>
+    </column>
+    <key id="35" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>col1</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="13" name="col1">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="13" name="col2">
+      <Position>2</Position>
+      <DataType>varchar(7000)|0</DataType>
+    </column>
+    <key id="38" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>col1</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="14" name="col1">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="14" name="col2">
+      <Position>2</Position>
+      <DataType>varchar(7000)|0</DataType>
+    </column>
+    <key id="41" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>col1</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="15" name="a">
+      <Position>1</Position>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="43" parent="16" name="a">
+      <Position>1</Position>
+      <DataType>varchar(65532)|0</DataType>
+    </column>
+    <argument id="44" parent="17" name="count">
+      <DataType>int(10) unsigned|0</DataType>
+    </argument>
+    <argument id="45" parent="18" name="count">
+      <DataType>int(10) unsigned|0</DataType>
+    </argument>
+    <argument id="46" parent="19" name="count">
+      <DataType>int(10) unsigned|0</DataType>
+    </argument>
+    <argument id="47" parent="20" name="count">
+      <DataType>int(10) unsigned|0</DataType>
+    </argument>
+    <argument id="48" parent="21" name="count">
+      <DataType>int(10) unsigned|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>
