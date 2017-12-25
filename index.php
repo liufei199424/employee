@@ -58,9 +58,9 @@
         }
     }
 
-    $module_name = $arr_url['controller'];
-    $module_file = MODULE_DIR . $module_name . '.class.php';
-    $method_name = $arr_url['method'];
+    $module_name = $arr_url['controller'] . "Action";
+    $module_file = MODULE_DIR . $module_name . '.php';
+    $method_name = "do" . $arr_url['method'];
 
     if (file_exists($module_file)) {
         include $module_file;
@@ -74,7 +74,6 @@
                 $obj_module->$method_name();
             }
         }
-
     } else {
         die("定义的模块不存在");
     }
