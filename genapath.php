@@ -31,8 +31,9 @@ class Genapath {
         $paths = [
             'action',
             'dao',
-            'entity',
-            'service'
+            'Entity',
+            'service',
+            'core'
         ];
 
         $list = [];

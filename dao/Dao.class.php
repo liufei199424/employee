@@ -8,15 +8,14 @@
 
 class Dao {
 
-    public static function query ($sql) {
-        $mysql_conf = array(
-            'host'    => '127.0.0.1:3306',
-            'db'      => 'demo',
-            'db_user' => 'root',
-            'db_pwd'  => 'root',
-        );
+    public $mysqli = null;
+
+    public function __construct(){
+        $mysql_json = file_get_contents("/employee/configure/mysql.json");
+        $mysql_conf = json_decode($mysql_json, true);
 
         $mysqli = @new mysqli($mysql_conf['host'], $mysql_conf['db_user'], $mysql_conf['db_pwd']);
+        $this->mysqli = $mysqli;
         if ($mysqli->connect_errno) {
             die("could not connect to the database:\n" . $mysqli->connect_error);//诊断连接错误
         }
@@ -25,24 +24,43 @@ class Dao {
         if (!$select_db) {
             die("could not connect to the db:\n" .  $mysqli->error);
         }
+    }
 
-//        $sql = "select * from people limit 10 ";
-
-        $res = $mysqli->query($sql);
+    public function query ($sql) {
+        $res = $this->mysqli->query($sql);
         if (!$res) {
-            die("sql error:\n" . $mysqli->error);
+            die("sql error:\n" . $this->mysqli->error);
         }
 
         $list = [];
         while ($row = $res->fetch_assoc()) {
-//            var_dump($row);
             $list[] = $row;
-//            print_r($row);
         }
 
         $res->free();
-        $mysqli->close();
+        $this->mysqli->close();
 
         return $list;
+    }
+
+    public function execute ($sql) {
+        $res = $this->mysqli->query($sql);
+        if (!$res) {
+            die("sql error:\n" . $this->mysqli->error);
+        }
+
+        $this->mysqli->close();
+    }
+
+    public function getList ($entityName, $sql) {
+        $list = $this->query($sql);
+
+        $entitys = [];
+
+        foreach ($list as $a) {
+            $entitys[] = new $entityName($a);
+        }
+
+        return $entitys;
     }
 }

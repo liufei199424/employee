@@ -1,3 +1,17 @@
 .headheight {
     height:36px;
 }
+.searchBar {
+    background-color: #f2f2f2;
+    padding: 8px 5px 8px 10px;
+    border: 1px solid #e9e9e9;
+    margin: 10px 0 10px 0;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+}

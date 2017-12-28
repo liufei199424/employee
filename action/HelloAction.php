@@ -1,12 +1,13 @@
 <?php
 
-class HelloAction {
-    public function __construct() {
-    }
-
+class HelloAction extends BaseAction {
     public function doHello() {
-        echo "Hello PHP!!! Fhw<br>";
+        $name = XRequest::get('name');
+        $age = XRequest::get('age');
 
-        header("Location: " . "../tpl/hello/hello.php");
+        $this->assign('nameone', $name);
+        $this->assign('ageone', $age);
+
+        $this->display("tpl/hello/hello.tpl.php");
     }
 }

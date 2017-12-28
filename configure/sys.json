@@ -1,0 +1,6 @@
+{
+  "root_path"   : "/employee",
+  "static_path" : "/employee/static",
+  "action_path" : "/employee/action",
+  "tpl_path"    : "/employee/tpl"
+}
