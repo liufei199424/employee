@@ -14,4 +14,20 @@ class PeopleDao extends Dao {
 
         return $list;
     }
+
+    public function getOneByName ($name) {
+        $cond = " and name = '{$name}' ";
+
+        $one = $this->getOne('People', $cond);
+
+        return $one;
+    }
+
+    public function getOneById ($id) {
+        $cond = " and id = '{$id}' ";
+
+        $one = $this->getOne('People', $cond);
+
+        return $one;
+    }
 }

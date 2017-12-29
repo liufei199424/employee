@@ -19,7 +19,12 @@ class PeopleAction extends BaseAction {
     public function doList () {
         $level = XRequest::get('level');
 
-        $list = $this->peopledao->getListByLevel($level);
+        if ($level > 0) {
+            $list = $this->peopledao->getListByLevel($level);
+        } else {
+            $list = $this->peopledao->getList('People', "");
+        }
+
 
         $this->assign('list', $list);
 
@@ -31,8 +36,33 @@ class PeopleAction extends BaseAction {
 
         $list = $this->peopledao->getListByLevel($level);
 
+        $one = $this->peopledao->getOneByName('素还真');
+
         $this->assign('list', $list);
+        $this->assign('one', $one);
 
         $this->display('tpl/people/one.tpl.php');
+    }
+
+    public function doAddOrModifyJson () {
+        $id = XRequest::get('id');
+        $name = XRequest::get('name');
+        $type = XRequest::get('type');
+
+        if ($type == 'add') {
+            $row = [];
+            $row['id'] = $id;
+            $row['name'] = $name;
+            $people = People::create($row);
+
+            echo "add-success";
+        } elseif ($type == 'modify') {
+            $people = $this->peopledao->getOneById($id);
+
+            $people->id = $id;
+            $people->name = $name;
+
+            echo "modify-success";
+        }
     }
 }

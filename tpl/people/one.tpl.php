@@ -6,6 +6,12 @@
 </head>
 <body>
     <?php
+        if ($one instanceof People) {
+            echo $one->name . "<br>";
+        } else {
+            echo "差无耻人<br>";
+        }
+
         foreach ($list as $people) {
             echo $people->id . "<br>";
             echo $people->createtime . "<br>";

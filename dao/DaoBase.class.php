@@ -27,6 +27,10 @@ class DaoBase {
     public function queryRow ($sql) {
         $results = $this->query($sql);
 
+        if (empty($results)) {
+            return [];
+        }
+
         return $results[0];
     }
 

@@ -31,7 +31,11 @@ class Dao extends DaoBase {
 
         $row = $this->queryRow($sql);
 
-        $entity = new $entityName($row);
+        if (!empty($row)) {
+            $entity = new $entityName($row);
+        } else {
+            $entity = null;
+        }
 
         return $entity;
     }
