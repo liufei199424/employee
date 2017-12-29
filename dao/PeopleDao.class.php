@@ -7,16 +7,11 @@
  */
 
 class PeopleDao extends Dao {
+    public function getListByLevel ($level) {
+        $cond = " and level = {$level} ";
 
-    public function getList ($sql) {
-        $list = $this->query($sql);
+        $list = $this->getList('People', $cond);
 
-        $entitys = [];
-
-        foreach ($list as $a) {
-            $entitys[] = new People($a);
-        }
-
-        return $entitys;
+        return $list;
     }
 }

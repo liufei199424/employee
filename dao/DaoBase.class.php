@@ -7,7 +7,7 @@
  */
 
 class DaoBase {
-    private static function getContent () {
+    private function getContent () {
         $mysql_json = file_get_contents("/employee/configure/mysql.json");
         $mysql_conf = json_decode($mysql_json, true);
 
@@ -25,64 +25,47 @@ class DaoBase {
     }
 
     public function queryRow ($sql) {
-        $mysqli = self::getContent();
+        $results = $this->query($sql);
 
-        $res = $mysqli->query($sql);
-        if (!$res) {
-            die("sql error:\n" . $mysqli->error);
-        }
-
-        $list = [];
-        while ($row = $res->fetch_assoc()) {
-            $list[] = $row;
-        }
-
-        $res->free();
-        $mysqli->close();
-
-        return $list;
+        return $results[0];
     }
 
+    // 查询多行 例：select id,name from people;
     public function queryRows ($sql) {
-        $mysqli = self::getContent();
+        $results = $this->query($sql);
 
-        $res = $mysqli->query($sql);
-        if (!$res) {
-            die("sql error:\n" . $mysqli->error);
-        }
-
-        $list = [];
-        while ($row = $res->fetch_assoc()) {
-            $list[] = $row;
-        }
-
-        $res->free();
-        $mysqli->close();
-
-        return $list;
+        return $results;
     }
 
+    // 查询单个值 例：select count(*) from people;
     public function queryValue ($sql) {
-        $mysqli = self::getContent();
+        $results = $this->query($sql);
 
-        $res = $mysqli->query($sql);
-        if (!$res) {
-            die("sql error:\n" . $mysqli->error);
+        $result = '';
+        foreach ($results[0] as $key => $value) {
+            $result = $value;
+            break;
         }
+
+        return $result;
+    }
+
+    // 查询单列多个值 例：select id from people;
+    public function queryValues ($sql) {
+        $results = $this->query($sql);
 
         $list = [];
-        while ($row = $res->fetch_assoc()) {
-            $list[] = $row;
+        foreach ($results as $row) {
+            foreach ($row as $key => $value) {
+                $list[] = $value;
+            }
         }
-
-        $res->free();
-        $mysqli->close();
-
+        
         return $list;
     }
 
-    public function queryValues ($sql) {
-        $mysqli = self::getContent();
+    public function query ($sql) {
+        $mysqli = $this->getContent();
 
         $res = $mysqli->query($sql);
         if (!$res) {
@@ -101,11 +84,13 @@ class DaoBase {
     }
 
     public function execute ($sql) {
-        $res = $this->mysqli->query($sql);
+        $mysqli = $this->getContent();
+
+        $res = $mysqli->query($sql);
         if (!$res) {
-            die("sql error:\n" . $this->mysqli->error);
+            die("sql error:\n" . $mysqli->error);
         }
 
-        $this->mysqli->close();
+        $mysqli->close();
     }
 }

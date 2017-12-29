@@ -43,4 +43,8 @@ class People extends Entity {
         $sql = "update {$this->table} set {$name} = '{$value}' where id = {$this->id} ";
         Dao::execute($sql);
     }
+
+    public static function getTableName () {
+        return 'people';
+    }
 }

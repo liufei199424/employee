@@ -53,12 +53,12 @@
                     foreach ($list as $a) {
                         ?>
                         <tr>
-                            <td class="text-center"><?=$a['id']?></td>
-                            <td><?=$a['createtime']?></td>
+                            <td class="text-center"><?=$a->id?></td>
+                            <td><?=$a->createtime?></td>
                             <td class="hidden-xs">
-                                <span class="label label-info"><?=$a['updatetime']?></span>
+                                <span class="label label-info"><?=$a->updatetime?></span>
                             </td>
-                            <td class="text-center"><?=$a['name']?></td>
+                            <td class="text-center"><?=$a->name?></td>
                         </tr>
                         <?php
                     }

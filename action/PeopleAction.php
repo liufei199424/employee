@@ -8,13 +8,18 @@
 
 class PeopleAction extends BaseAction {
 
+    private $peopledao = null;
+
+    public function __construct(){
+        parent::__construct();
+
+        $this->peopledao = new PeopleDao();
+    }
+
     public function doList () {
-        $sql = "select * from people limit 10 ";
+        $level = XRequest::get('level');
 
-//        $list = Dao::query($sql);
-
-        $peopledao = new PeopleDao();
-        $list = $peopledao->getList($sql);
+        $list = $this->peopledao->getListByLevel($level);
 
         $this->assign('list', $list);
 
@@ -22,12 +27,9 @@ class PeopleAction extends BaseAction {
     }
 
     public function doOne () {
-        $sql = "select * from people limit 10 ";
+        $level = XRequest::get('level');
 
-//        $list = Dao::query($sql);
-
-        $peopledao = new PeopleDao();
-        $list = $peopledao->getList($sql);
+        $list = $this->peopledao->getListByLevel($level);
 
         $this->assign('list', $list);
 

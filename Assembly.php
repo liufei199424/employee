@@ -4,6 +4,7 @@
            'HelloAction' => 'action/HelloAction.php',
            'PeopleAction' => 'action/PeopleAction.php',
            'Dao' => 'dao/Dao.class.php',
+           'DaoBase' => 'dao/DaoBase.class.php',
            'PeopleDao' => 'dao/PeopleDao.class.php',
            'People' => 'Entity/People.class.php',
            'BaseAction' => 'core/BaseAction.class.php',
