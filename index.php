@@ -27,7 +27,7 @@
 
         $obj_action = new $action();
         if (!method_exists($obj_action, $method)) {
-            die("要调用的方法不存在");
+            die("{$method}方法不存在");
         } else {
             if (is_callable(array($obj_action, $method))) {
                 // 调用action的method

@@ -9,26 +9,39 @@
                 <div class="form-group mt10">
                     <label class="control-label col-md-1">姓名</label>
                     <div class="col-md-3">
-                        <input class="form-control" type="text" name="doctor_name" value="" placeholder="医生姓名模糊搜索" />
+                        <input class="form-control" type="text" name="doctor_name" value="" placeholder="" />
                     </div>
                     <label class="control-label col-md-1">武学</label>
                     <div class="col-md-3">
-                        <input class="form-control" type="text" name="doctor_name" value="" placeholder="医生姓名模糊搜索" />
+                        <input class="form-control" type="text" name="doctor_name" value="" placeholder="" />
                     </div>
                 </div>
                 <div class="form-group mt10">
                     <label class="control-label col-md-1">诗号</label>
                     <div class="col-md-3">
-                        <input class="form-control" type="text" name="doctor_name" value="" placeholder="医生姓名模糊搜索" />
+                        <input class="form-control" type="text" name="doctor_name" value="" placeholder="" />
                     </div>
                     <label class="control-label col-md-1">等级</label>
                     <div class="col-md-3">
+                        <?php
+                            $rows = [
+                                '-1' => '全部',
+                                '0' => '超先天',
+                                '1' => '先天',
+                                '2' => '一流高手',
+                                '3' => '二流高手'
+                            ];
+                        ?>
                         <select class="form-control" id="level" name="level" size="1">
-                            <option value="-1">全部</option>
-                            <option value="0">超先天</option>
-                            <option value="1">先天</option>
-                            <option value="2">一流高手</option>
-                            <option value="3">二流高手</option>
+                            <?php
+                                foreach ($rows as $key => $value) {
+                                    if ($key == $level) {
+                                        ?> <option value="<?=$key?>" selected><?=$value?></option> <?php
+                                    } else {
+                                        ?> <option value="<?=$key?>"><?=$value?></option> <?php
+                                    }
+                                }
+                            ?>
                         </select>
                     </div>
                 </div>

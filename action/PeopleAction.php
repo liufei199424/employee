@@ -19,14 +19,16 @@ class PeopleAction extends BaseAction {
     public function doList () {
         $level = XRequest::get('level');
 
-        if ($level > 0) {
-            $list = $this->peopledao->getListByLevel($level);
-        } else {
-            $list = $this->peopledao->getList('People', "");
+        $cond = "";
+
+        if ($level >= 0) {
+            $cond .= " and level = {$level} ";
         }
 
+        $list = $this->peopledao->getList('People', $cond);
 
         $this->assign('list', $list);
+        $this->assign('level', $level);
 
         $this->display("tpl/people/list.tpl.php");
     }

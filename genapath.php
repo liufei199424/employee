@@ -45,6 +45,8 @@ class Genapath {
                 $classname = explode('.', $filename)[0];
 
                 $list[$classname] = $row;
+
+                echo $classname . " => " . $row . "\n";
             }
         }
 
